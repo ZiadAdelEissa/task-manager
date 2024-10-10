@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { BiSolidEdit } from "react-icons/bi";
+import { MdDeleteForever } from "react-icons/md";
 export default function Taskitems({ items, editItems, deleteItems }) {
   const [isEditing, setIsEditing] = useState(false);
   const [updatedname, setName] = useState(items.name);
@@ -49,7 +51,7 @@ export default function Taskitems({ items, editItems, deleteItems }) {
             <option value="Finished">Finished</option>
           </select>
           <button
-            className=" absolute bottom-[5px]  p-1 bg-[#282727] text-white rounded-xl drop-shadow-lg hover:bg-[#707070] hover:text-black hover:scale-[1.1] hover:transition-all hover:drop-shadow-xl w-[80px]"
+            className=" absolute bottom-[5px]  p-1 bg-[#282727] text-white rounded-xl drop-shadow-lg hover:bg-[#c6c6c6c6] hover:text-black hover:scale-[1.1] hover:transition-all hover:drop-shadow-xl w-[80px]"
             onClick={handleEdit}
           >
             save
@@ -71,16 +73,16 @@ export default function Taskitems({ items, editItems, deleteItems }) {
           </h2>
           <div className="buttons flex flex-wrap absolute  bottom-[5px]  gap-9 justify-between items-centre w-fit h-fit">
             <button
-              className=" flex flex-wrap  justify-around items-center p-1 bg-[#282727] text-white rounded-xl drop-shadow-lg hover:bg-[#757575] hover:text-black hover:scale-[1.1] hover:transition-all hover:drop-shadow-xl"
+              className=" flex flex-wrap  justify-around items-center p-1 bg-[#282727] text-white rounded-xl drop-shadow-lg hover:bg-[#c6c6c6] hover:text-black hover:scale-[1.1] hover:transition-all hover:drop-shadow-xl"
               onClick={() => setIsEditing(true)}
             >
-              Edit
+            <BiSolidEdit className="w-[25px] h-[25px]" />
             </button>
             <button
-              className=" flex flex-wrap  justify-around items-center p-1 bg-[#282727] text-white rounded-xl drop-shadow-lg hover:bg-[#707070] hover:text-black hover:scale-[1.1] hover:transition-all hover:drop-shadow-xl"
+              className=" flex flex-wrap  justify-around items-center p-1 bg-[#282727] text-white rounded-xl drop-shadow-lg hover:bg-[#c6c6c6] hover:text-black hover:scale-[1.1] hover:transition-all hover:drop-shadow-xl"
               onClick={() => deleteItems(items.id)}
             >
-              Delete
+              <MdDeleteForever className="w-[25px] h-[25px]" />
             </button>
           </div>
         </div>
